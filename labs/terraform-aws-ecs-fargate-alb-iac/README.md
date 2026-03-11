@@ -25,48 +25,63 @@ A solução provisiona uma infraestrutura baseada em containers (Serverless Comp
 
 Para garantir que o ambiente de execução seja idêntico, utilize o `Dockerfile` incluso para subir um container de deploy.
 
-1. **Build da imagem de deploy:**
+**Build da imagem de deploy:**
 ```bash
 docker build -t terraform-iac-engine:v1.0 .
-Execução do container (mapeando o volume de código):
-bash
-Copy
+```
+
+
+
+**Execução do container (mapeando o volume de código):**
+```bash
 docker run -dit --name iac-deploy-container -v ${PWD}:/iac terraform-iac-engine:v1.0 /bin/bash
-Acessar o ambiente:
-bash
-Copy
+```
+
+**Acessar o ambiente:**
+```bash
 docker exec -it iac-deploy-container /bin/bash
 cd /iac/labs/terraform-aws-ecs-fargate-alb-iac/infra
-Opção B: Execução Local
-Navegue até a pasta da infraestrutura:
-bash
-Copy
+```
+
+### Opção B: Execução Local
+
+**Navegue até a pasta da infraestrutura:**
+```bash
 cd labs/terraform-aws-ecs-fargate-alb-iac/infra
-Configure suas credenciais AWS:
-bash
-Copy
+```
+
+**Configure suas credenciais AWS:**
+```bash
 aws configure
-Prepare as variáveis de ambiente:
-bash
-Copy
+```
+
+**Prepare as variáveis de ambiente:**
+```bash
 cp terraform.tfvars.example terraform.tfvars
-Provisionamento:
-bash
-Copy
+```
+
+**Provisionamento:**
+```bash
 terraform init
 terraform plan
 terraform apply
+```
 
-
-Segurança e Boas Práticas
+## Segurança e Boas Práticas
 Zero Secrets: Nenhuma credencial AWS ou ID de conta real é armazenado no repositório.
+<br>
 Variáveis Sensíveis: Uso de sensitive = true no Terraform para proteger dados críticos.
+<br>
 Infra Imutável: Toda alteração é feita via código, garantindo rastreabilidade.
+<br>
 Modularização: Estrutura preparada para evolução em módulos reutilizáveis.
+<br><br>
 
 
-Autor
+**Autor**
+<br>
 Gabriel Pacheco
+<br>
 Analytics Engineer em formação 
 
 
