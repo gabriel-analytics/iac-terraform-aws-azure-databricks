@@ -29,7 +29,7 @@ Para garantir que o ambiente de execução seja idêntico, você pode utilizar o
    Execução do container (mapeando o volume de código):
     docker run -dit --name iac-deploy-container -v ${PWD}:/iac terraform-iac-engine:v1.0 /bin/bash
 
-Opção B: Execução Local
+### Opção B: Execução Local
 Navegue até a pasta da infraestrutura: cd labs/terraform-aws-ecs-fargate-alb-iac/infra
 Configure suas credenciais AWS localmente (aws configure).
 Crie seu arquivo de variáveis real: cp terraform.tfvars.example terraform.tfvars
