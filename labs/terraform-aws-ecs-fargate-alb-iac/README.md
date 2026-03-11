@@ -2,7 +2,7 @@
 
 Este repositório contém a automação completa para o deploy de aplicações containerizadas na AWS, utilizando **Terraform** para orquestrar uma arquitetura escalável, segura e resiliente.
 
-## 🏗️ Arquitetura da Solução
+## Arquitetura da Solução
 
 O projeto provisiona uma infraestrutura moderna baseada em containers (Serverless Compute), composta por:
 
@@ -12,18 +12,18 @@ O projeto provisiona uma infraestrutura moderna baseada em containers (Serverles
 - **Edge & Traffic:** Application Load Balancer (ALB) para distribuição de carga e Health Checks.
 - **Observabilidade:** CloudWatch Logs integrado para monitoramento das tasks.
 
-> **[ILUSTRAÇÃO DO FLUXO NO EXCALIDRAW]**
+> **[ILUSTRAÇÃO DO FLUXO  ]**
 > '![Fluxo de Infraestrutura](./labs/terraform-aws-ecs-fargate-alb-iac/diagrams/terraform-aws-flow-excalidraw.png)'
 
 ---
 
-## 🚀 Como Executar
+## Como Executar
 
 ### Opção A: Ambiente Isolado (Docker)
 Para garantir que o ambiente de execução seja idêntico, você pode utilizar o Dockerfile incluso para subir um container de deploy com Terraform e AWS CLI pré-instalados.
 
 1. **Build da imagem de deploy:**
-   '''bash
+
    docker build -t terraform-iac-engine:v1.0 .
 
    Execução do container (mapeando o volume de código):
