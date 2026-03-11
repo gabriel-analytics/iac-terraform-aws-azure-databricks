@@ -24,22 +24,38 @@ Para garantir que o ambiente de execução seja idêntico, você pode utilizar o
 
 1. **Build da imagem de deploy:**
 
+   ```bash
    docker build -t terraform-iac-engine:v1.0 .
 
+
    Execução do container (mapeando o volume de código):
+   ```bash   
     docker run -dit --name iac-deploy-container -v ${PWD}:/iac terraform-iac-engine:v1.0 /bin/bash
 
+
 ### Opção B: Execução Local
-Navegue até a pasta da infraestrutura: cd labs/terraform-aws-ecs-fargate-alb-iac/infra
-Configure suas credenciais AWS localmente (aws configure).
-Crie seu arquivo de variáveis real: cp terraform.tfvars.example terraform.tfvars
 
-Inicialize e aplique:
-terraform init
-terraform plan
-terraform apply
+1.Navegue até a pasta da infraestrutura: 
+   ```bash
+   cd labs/terraform-aws-ecs-fargate-alb-iac/infra
+  
+2.Configure suas credenciais AWS localmente 
+    ```bash   
+    aws configure
 
-Segurança e Boas Práticas
+3.Crie seu arquivo de variáveis real: 
+    ```bash   
+    cp terraform.tfvars.example terraform.tfvars
+
+4.Inicialize e aplique:
+    ```bash   
+    terraform init
+    terraform plan
+    terraform apply
+
+---
+
+### Segurança e Boas Práticas
 Zero Secrets: Nenhuma credencial AWS ou ID de conta real é armazenado no repositório.
 Variáveis Sensíveis: O uso de sensitive = true no Terraform garante que dados críticos não apareçam nos logs de console.
 Modularização: Estrutura preparada para evolução em módulos reutilizáveis.
