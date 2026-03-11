@@ -12,8 +12,8 @@ O projeto provisiona uma infraestrutura moderna baseada em containers (Serverles
 - **Edge & Traffic:** Application Load Balancer (ALB) para distribuição de carga e Health Checks.
 - **Observabilidade:** CloudWatch Logs integrado para monitoramento das tasks.
 
-> **[ILUSTRAÇÃO DO FLUXO  ]**
-> '![Fluxo de Infraestrutura](./labs/terraform-aws-ecs-fargate-alb-iac/diagrams/terraform-aws-flow-excalidraw.png)'
+
+![Fluxo de Infraestrutura](./diagrams/ecs-terraform-architecture.png)
 
 ---
 
